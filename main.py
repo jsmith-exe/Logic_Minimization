@@ -1,20 +1,27 @@
 # Jamie Smith
 # Main File
 
-import int_to_binary as itb
+import conversion as conv
 
 if __name__ == "__main__":
-    num_inputs = int(input("Input the number of inputs: "))
-    minterms = str(input("Input the Minterms as an array: "))
+    try:
+        num_inputs = int(input("Input the number of inputs: "))
+    except ValueError:
+        print ("Error: number of inputs must be an integer")
     
-    if (num_inputs != int):
-        print("Error, number of nnputs must be an Integer")
-
     if (num_inputs > 26):
         print("Error, number of inputs must be less than 26!")
+        exit()
 
-    minterms_array = []
+    # Ensure consistent use of minterms_input
+    minterms_input = input("Input the minterms as a comma-separated list (e.g., 1,2,3): ")
 
-    minterms_array = itb.int_to_binary(minterms)
+    try:
+        minterms = [int(x) for x in minterms_input.split(',')]
+    except ValueError:
+        print("Error: minterms must be integers separated by commas")
+        exit()
 
-    print (minterms_array)
+    minterms_binary_array = conv.int_to_binary(minterms, num_inputs)
+
+    print (minterms_binary_array)

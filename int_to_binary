@@ -1,7 +1,0 @@
-#Jamie Smith
-# Converter Integer to Binary format
-
-def int_to_binary(minterms):
-    for n in minterms:
-        return bin(n)[2:0]
-        
