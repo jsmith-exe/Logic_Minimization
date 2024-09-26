@@ -1,8 +1,6 @@
 # Jamie Smith
 # Collecting User Inputs
 
-import conversion as conv
-
 MAX_INPUTS = 26  # Maximum number of inputs
 
 def get_inputs():
@@ -16,7 +14,7 @@ def get_inputs():
         except ValueError:
             print("Error: number of inputs must be an integer")
 
-def get_minterms():
+def get_minterms(num_inputs):
     while True:
         minterms_input = input("Input the minterms as a comma-separated list (e.g., 1,2,3): ")
         try:
