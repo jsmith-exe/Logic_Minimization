@@ -1,7 +1,7 @@
 # Jamie Smith
 # Get Hamming Weight
 
-def hamming_weight(minterms_binary_array, minterms):
+def hamming_weight(minterms_binary_array, terms):
    
     weight_groups = {}
     minterm_mapping = {}
@@ -11,7 +11,7 @@ def hamming_weight(minterms_binary_array, minterms):
         if weight not in weight_groups:
             weight_groups[weight] = []
         weight_groups[weight].append(binary_string)
-        minterm_mapping[binary_string] = minterms[i]  # Store mapping from binary string to original minterm
+        minterm_mapping[binary_string] = terms[i]  # Store mapping from binary string to original minterm
 
     return weight_groups, minterm_mapping
 
